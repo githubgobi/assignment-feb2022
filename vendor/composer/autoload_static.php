@@ -4266,6 +4266,8 @@ class ComposerStaticInitf6f9af824681d44d6dbfb5bb8ac20d4c
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
+        'Tests\\Unit\\LoanInitalTest' => __DIR__ . '/../..' . '/tests/Unit/LoanInitalTest.php',
+        'Tests\\Unit\\LoanRepaymentTest' => __DIR__ . '/../..' . '/tests/Unit/LoanRepaymentTest.php',
         'Tests\\Unit\\LoginTest' => __DIR__ . '/../..' . '/tests/Unit/LoginTest.php',
         'Tests\\Unit\\UserTest' => __DIR__ . '/../..' . '/tests/Unit/UserTest.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',

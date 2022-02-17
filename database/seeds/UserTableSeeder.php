@@ -63,7 +63,7 @@ class UserTableSeeder extends Seeder
         $loan = new Loan();
         $loan->loan_amount = 2000;
         $loan->monthly_income = 5000;
-        $loan->tenure_by_week = 3;
+        $loan->tenure_by_week = 2;
         $loan->slug  =  'loan-1';
         $loan->user_id = 1;
         $loan->balance_amount = 2000;

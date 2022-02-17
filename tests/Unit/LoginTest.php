@@ -41,137 +41,137 @@ class LoginTest extends TestCase
     *
     * @return void
     */
-    // public function testUserLogin()
-    // {
-    //     $baseUrl = config('app.url') . '/api/v1/login';
-    //     $email = $this->api_user_email;
-    //     $password = $this->api_user_password;
+    public function testUserLogin()
+    {
+        $baseUrl = config('app.url') . '/api/v1/login';
+        $email = $this->api_user_email;
+        $password = $this->api_user_password;
 
-    //     $response = $this->json('POST', $baseUrl . '/', [
-    //             'email' => $email,
-    //             'password' => $password
-    //     ]);
+        $response = $this->json('POST', $baseUrl . '/', [
+                'email' => $email,
+                'password' => $password
+        ]);
 
-    //     $response
-    //         ->assertStatus(200)
-    //         ->assertJsonStructure([
-    //             'access_token', 'token_type', 'expires_in'
-    //         ]);
-    // }
+        $response
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'access_token', 'token_type', 'expires_in'
+            ]);
+    }
 
-    // public function testLoginError()
-    // {
-    //     $baseUrl = config('app.url') . '/api/v1/login';
-    //     $email = $this->api_user_email;
-    //     $password = '';
+    public function testLoginError()
+    {
+        $baseUrl = config('app.url') . '/api/v1/login';
+        $email = $this->api_user_email;
+        $password = '';
 
-    //     $response = $this->json('POST', $baseUrl . '/', [
-    //         'email' => $email,
-    //         'password' => $password
-    //     ]);
+        $response = $this->json('POST', $baseUrl . '/', [
+            'email' => $email,
+            'password' => $password
+        ]);
 
-    //     $response
-    //         ->assertStatus(422)
-    //         ->assertJsonStructure([
-    //             'details'
-    //         ]);
-    // }
+        $response
+            ->assertStatus(422)
+            ->assertJsonStructure([
+                'details'
+            ]);
+    }
 
-    // /**
-    // * Login as default API user and get token back.
-    // *
-    // * @return void
-    // */
-    // public function testAdminLogin()
-    // {
-    //     $baseUrl = config('app.url') . '/api/v1/login';
-    //     $email = $this->api_admin_email;
-    //     $password = $this->api_admin_password;
+    /**
+    * Login as default API user and get token back.
+    *
+    * @return void
+    */
+    public function testAdminLogin()
+    {
+        $baseUrl = config('app.url') . '/api/v1/login';
+        $email = $this->api_admin_email;
+        $password = $this->api_admin_password;
 
-    //     $response = $this->json('POST', $baseUrl . '/', [
-    //         'email' => $email,
-    //         'password' => $password
-    //     ]);
+        $response = $this->json('POST', $baseUrl . '/', [
+            'email' => $email,
+            'password' => $password
+        ]);
 
-    //     $response
-    //         ->assertStatus(200)
-    //         ->assertJsonStructure([
-    //             'access_token', 'token_type', 'expires_in'
-    //         ]);
-    // }
+        $response
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'access_token', 'token_type', 'expires_in'
+            ]);
+    }
 
-    // /**
-    // * Test logout.
-    // *
-    // * @return void
-    // */
-    // public function testUserLogout()
-    // {
-    //     $user = User::where('email', $this->api_user_email)->first();
-    //     $token = JWTAuth::fromUser($user);
-    //     $baseUrl = config('app.url') . '/api/v1/logout?token=' . $token;
+    /**
+    * Test logout.
+    *
+    * @return void
+    */
+    public function testUserLogout()
+    {
+        $user = User::where('email', $this->api_user_email)->first();
+        $token = JWTAuth::fromUser($user);
+        $baseUrl = config('app.url') . '/api/v1/logout?token=' . $token;
 
-    //     $response = $this->json('POST', $baseUrl, []);
+        $response = $this->json('POST', $baseUrl, []);
 
-    //     $response
-    //         ->assertStatus(200)
-    //         ->assertExactJson([
-    //             'message' => 'Successfully logged out'
-    //         ]);
-    // }
-    // /**
-    // * Test logout.
-    // *
-    // * @return void
-    // */
-    // public function testAdminLogout()
-    // {
-    //     $user = User::where('email', $this->api_admin_email)->first();
-    //     $token = JWTAuth::fromUser($user);
-    //     $baseUrl = config('app.url') . '/api/v1/logout?token=' . $token;
+        $response
+            ->assertStatus(200)
+            ->assertExactJson([
+                'message' => 'Successfully logged out'
+            ]);
+    }
+    /**
+    * Test logout.
+    *
+    * @return void
+    */
+    public function testAdminLogout()
+    {
+        $user = User::where('email', $this->api_admin_email)->first();
+        $token = JWTAuth::fromUser($user);
+        $baseUrl = config('app.url') . '/api/v1/logout?token=' . $token;
 
-    //     $response = $this->json('POST', $baseUrl, []);
+        $response = $this->json('POST', $baseUrl, []);
 
-    //     $response
-    //         ->assertStatus(200)
-    //         ->assertExactJson([
-    //             'message' => 'Successfully logged out'
-    //         ]);
-    // }
+        $response
+            ->assertStatus(200)
+            ->assertExactJson([
+                'message' => 'Successfully logged out'
+            ]);
+    }
 
-    // /**
-    // * Test token refresh.
-    // *
-    // * @return void
-    // */
-    // public function testRefresh()
-    // {
-    //     $user = User::where('email', $this->api_user_email)->first();
-    //     $token = JWTAuth::fromUser($user);
-    //     $baseUrl = config('app.url') . '/api/v1/refresh?token=' . $token;
+    /**
+    * Test token refresh.
+    *
+    * @return void
+    */
+    public function testRefresh()
+    {
+        $user = User::where('email', $this->api_user_email)->first();
+        $token = JWTAuth::fromUser($user);
+        $baseUrl = config('app.url') . '/api/v1/refresh?token=' . $token;
 
-    //     $response = $this->json('POST', $baseUrl, []);
+        $response = $this->json('POST', $baseUrl, []);
 
-    //     $response
-    //         ->assertStatus(200)
-    //         ->assertJsonStructure([
-    //             'access_token', 'token_type', 'expires_in'
-    //         ]);
-    // }
+        $response
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'access_token', 'token_type', 'expires_in'
+            ]);
+    }
 
-    // /**
-    // * Get all users.
-    // *
-    // * @return void
-    // */
-    // public function testGetInfo()
-    // {
-    //     $user = User::where('email', $this->api_user_email)->first();
-    //     $token = JWTAuth::fromUser($user);
-    //     $baseUrl = config('app.url') . '/api/v1/me?token=' . $token;
+    /**
+    * Get all users.
+    *
+    * @return void
+    */
+    public function testGetInfo()
+    {
+        $user = User::where('email', $this->api_user_email)->first();
+        $token = JWTAuth::fromUser($user);
+        $baseUrl = config('app.url') . '/api/v1/me?token=' . $token;
 
-    //     $response = $this->json('POST', $baseUrl, []);
+        $response = $this->json('POST', $baseUrl, []);
 
-    //     $response->assertStatus(200);
-    // }
+        $response->assertStatus(200);
+    }
 }

@@ -31,12 +31,13 @@
 - First step is to, clone this project.
   Once cloning of the project is done. Go to root of this project and Open terminal to 
 - Run Command "composer install"
-- Open .env file and copy .env.example file .env file.
+- Open .env file and copy .env.example file to .env file.
 - using sqlite , so no need to worry about mysql installation.file location: (db file avilable on database/database.sqlite)
 - SQLITE Viewer https://inloop.github.io/sqlite-viewer/  - helps to view the database schema and details stored on database
 
 Once done with the changes, Open terminal again to
-- Run Command "php artisan serve" 
+- Run Command "php artisan migrate:refresh --seed"  - It helps to create table add sample entries
+- Run Command "php artisan serve" - It helps start the php server
 - If ypu are having issue port run these command ( "php artisan serve --port=8001" as change API end point url on postman collections).
 
 Now you are ready to excute the API collection.
@@ -99,7 +100,7 @@ User 2:
     Password: Welcome@123
 
 User 3: 
-    Email: customer1@gmail.com
+    Email: customer2@gmail.com
     Password: Welcome@123
 
 ## Postman collections & Unit test cases avoid fatal errors:
@@ -120,9 +121,16 @@ User 3:
 ## Unit Testing
 
 - run this command for create the tables on test database
-    - php artisan migrate:refresh --seed --env=testing
-- run test cases run the below command
-    - composer test
+    - Run command "php artisan migrate:refresh --seed"
+- Due to Sqlite DB lock problem run the file one by one
+    - Run command "composer test  tests/Unit/UserTest"
+    - Run command "composer test  tests/Unit/LoginTest"
+    - Run command "composer test  tests/Unit/LoanInitalTest"
+    - Run command "composer test  tests/Unit/LoanRepaymentTest"
+- covered all the test cases mostly
+- If needed we can use separate DataBase but not yet configured
+     - php artisan migrate:refresh --seed --env=testing
 
 
-## Note : whenever run the test cases please run migrate command first recommended
+
+## Note : ******whenever run the test cases please run migrate command first recommended*****************

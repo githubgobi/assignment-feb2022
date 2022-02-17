@@ -3830,6 +3830,8 @@ return array(
     'Tests\\Feature\\ExampleTest' => $baseDir . '/tests/Feature/ExampleTest.php',
     'Tests\\TestCase' => $baseDir . '/tests/TestCase.php',
     'Tests\\Unit\\ExampleTest' => $baseDir . '/tests/Unit/ExampleTest.php',
+    'Tests\\Unit\\LoanInitalTest' => $baseDir . '/tests/Unit/LoanInitalTest.php',
+    'Tests\\Unit\\LoanRepaymentTest' => $baseDir . '/tests/Unit/LoanRepaymentTest.php',
     'Tests\\Unit\\LoginTest' => $baseDir . '/tests/Unit/LoginTest.php',
     'Tests\\Unit\\UserTest' => $baseDir . '/tests/Unit/UserTest.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',

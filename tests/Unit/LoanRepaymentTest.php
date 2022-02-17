@@ -126,7 +126,7 @@ class LoanRepaymentTest extends TestCase
 
         $response = $this->json('GET', $baseUrl, []);
 
-        $response->assertStatus(200)->assertExactJson([
+        $response->assertStatus(404)->assertExactJson([
             'data' => 'no repayments pending',
         ]);
     }
