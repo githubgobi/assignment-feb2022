@@ -55,7 +55,7 @@ class LoanController extends Controller
         if(Auth::user()->hasRole('admin')){
             return response()->json([
                 'data' => 'you are not allowed to create a loan',
-            ], 422);
+            ], 401);
         }
         try {
             DB::beginTransaction();
@@ -139,7 +139,7 @@ class LoanController extends Controller
              }
              $loan->update();
              DB::commit();
-             return response()->json(['data' => $loan],201);
+             return response()->json(['data' => $loan],200);
          } catch (\Illuminate\Database\QueryException $exception) {
              DB::rollback();
              return response()->json(['data' => $exception->errorInfo ],400);

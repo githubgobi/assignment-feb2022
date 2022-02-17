@@ -31,10 +31,7 @@ class RepaymentController extends Controller
         }
         $loan = Loan::where('user_id',Auth::user()->id)->where('status',1)->first();
         if(is_null($loan)){
-            return response()->json(['data' => 'loan not found'],404);
-        }
-        if($loan->status==0){
-            return response()->json(['data' => 'loan not yet approved. please check after sometime'],400);
+            return response()->json(['data' => 'no pending loan not found'],404);
         }
         $getLatestRepayment = LoanRepayment::where('loan_id',$loan->id)->where('user_id',Auth::user()->id)->where('status',0)->orderBy('id','ASC')->first();
         if(is_null($getLatestRepayment)){

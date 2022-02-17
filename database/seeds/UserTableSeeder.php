@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Loan;
 
 class UserTableSeeder extends Seeder
 {
@@ -58,5 +59,43 @@ class UserTableSeeder extends Seeder
         $user->save();
 
         $user->attachRole($adminRole);
+
+        $loan = new Loan();
+        $loan->loan_amount = 2000;
+        $loan->monthly_income = 5000;
+        $loan->tenure_by_week = 3;
+        $loan->slug  =  'loan-1';
+        $loan->user_id = 1;
+        $loan->balance_amount = 2000;
+        $loan->save();
+
+        $loan = new Loan();
+        $loan->loan_amount = 2000;
+        $loan->monthly_income = 5000;
+        $loan->tenure_by_week = 3;
+        $loan->slug  =  'loan-2';
+        $loan->user_id = 3;
+        $loan->balance_amount = 2000;
+        $loan->save();
+
+        $loan = new Loan();
+        $loan->loan_amount = 2000;
+        $loan->monthly_income = 5000;
+        $loan->tenure_by_week = 3;
+        $loan->slug  =  'loan-3';
+        $loan->user_id = 3;
+        $loan->balance_amount = 2000;
+        $loan->save();
+
+        $loan = new Loan();
+        $loan->loan_amount = 2000;
+        $loan->monthly_income = 5000;
+        $loan->tenure_by_week = 3;
+        $loan->slug  =  'loan-4';
+        $loan->user_id = 3;
+        $loan->balance_amount = 2000;
+        $loan->status = 2;
+        $loan->save();
+
     }
 }

@@ -14,7 +14,7 @@ class Loan extends Model
      * @var array
      */
     protected $fillable = [
-        'loan_amount', 'monthly_income', 'tenure_by_week','slug','user_id'
+        'loan_amount', 'monthly_income', 'tenure_by_week','slug','user_id','status'
     ];
 
     protected $table = 'user_loans';
