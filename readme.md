@@ -2,7 +2,7 @@
 
 
 ## Pre Requisites
-
+- OS - ubuntu 18.04 Recommanded
 - Make sure to have composer on your system.
 - Check the server requirement for the setup in your local machine in XAMPP or WAMP
     - PHP >= 7.1 
@@ -36,6 +36,10 @@
 - SQLITE Viewer https://inloop.github.io/sqlite-viewer/  - helps to view the database schema and details stored on database
 
 Once done with the changes, Open terminal again to
+- Run Command " php artisan config:clear"
+- Run Command " php artisan cache:clear"
+- Run Command " php artisan view:clear"
+- Run Command " composer dump-autoload "
 - Run Command "php artisan migrate:refresh --seed"  - It helps to create table add sample entries
 - Run Command "php artisan serve" - It helps start the php server
 - If ypu are having issue port run these command ( "php artisan serve --port=8001" as change API end point url on postman collections).
