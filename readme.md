@@ -137,4 +137,5 @@ User 3:
 
 
 
-## Note : ******whenever run the test cases please run migrate command first recommended*****************
+## Note : 
+-whenever run the test cases please run migrate command first recommended
